@@ -1,0 +1,36 @@
+import urllib.parse
+import pandas as pd
+import requests
+apiKey = 'your api key'
+secretKey = 'your secret ey'
+redirectUrl = 'https://www.google.com/'
+rurl = urllib.parse.quote(redirectUrl,safe="")
+rurl
+#run above code first 
+uri = f'https://api-v2.upstox.com/login/authorization/dialog?response_type=code&client_id={apiKey}&redirect_uri={rurl}'
+uri
+#run above code then you will get the auth url ling copy paste it in yourbrowser you get a auyh code copy the auth code and peste blowe line code= ''
+url = 'https://api-v2.upstox.com/login/authorization/token'
+code = 'qZEE4'
+headers = {
+    'accept': 'application/json',
+    'Api-Version': '2.0',
+    'Content-Type': 'application/x-www-form-urlencoded'
+}
+
+data = {
+    'code': code,
+    'client_id': apiKey,
+    'client_secret': secretKey,
+    'redirect_uri': redirectUrl,
+    'grant_type': 'authorization_code'
+
+}
+response = requests.post(url, headers=headers, data=data)
+json_response = response.json()
+json_response
+
+#run above code you get the access token 
+access_token = json_response['access_token']
+access_token
+#run the loging is complite 
