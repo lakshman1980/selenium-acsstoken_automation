@@ -1,0 +1,7 @@
+API_KEY = "513de26d-bc67-493a-a0be-3b3f56"
+SECRET_KEY =  "6qu783"
+RURL = "https://www.google.com/"
+
+MOBILE_NO = '99925236304'
+TOTP_KEY = "H6XXUHCOG3MCLM3ZJSHCAEJ6J"
+PIN   =    '350894'
